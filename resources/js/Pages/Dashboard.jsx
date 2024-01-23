@@ -1,8 +1,12 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head } from '@inertiajs/react';
-import GitHubIssues from "@/Pages/Github/GithubIssues.jsx";
+import IssuesApp from "@/Pages/Github/IssuesApp.jsx";
+import { QueryClient, QueryClientProvider } from "react-query";
+import {ReactQueryDevtools} from "react-query/devtools";
 
 export default function Dashboard({ auth }) {
+    const queryClient = new QueryClient();
+
     return (
         <AuthenticatedLayout
             user={auth.user}
@@ -10,7 +14,10 @@ export default function Dashboard({ auth }) {
         >
             <Head title="Dashboard" />
 
-            <GitHubIssues />
+            <QueryClientProvider client={queryClient}>
+                <IssuesApp />
+                <ReactQueryDevtools />
+            </QueryClientProvider>
         </AuthenticatedLayout>
     );
 }
