@@ -1,6 +1,7 @@
 # Github Issues App
 
-A Github application to illustrate Laravel with Inertia/React.
+A Github application to illustrate pulling data from GitHub Issues API.
+- GitHub API: https://docs.github.com/en/rest/issues/issues?apiVersion=2022-11-28#list-repository-issues
 
 ![homepage_screenshot.png](public/images/homepage_screenshot.png)
 
@@ -14,9 +15,9 @@ Frontend Framework:
 - Npm v10.3.0
 
 Frontend installed packages:
-- **Prop Types (typechecking):** https://legacy.reactjs.org/docs/typechecking-with-proptypes.html
-- **React Transition Group (defining entering and exiting transitions):** https://reactcommunity.org/react-transition-group/
-- **Zustand (global state management):** https://github.com/pmndrs/zustand
+- **Prop Types v18.2.0 (typechecking):** https://legacy.reactjs.org/docs/typechecking-with-proptypes.html
+- **React Query v3 (asynchronous state management):** https://tanstack.com/query/v3/docs/react/overview
+- **date-fns v3.0.0 (javaScript date utility library):** https://date-fns.org/docs/Getting-Started
 
 Note:
 - using server-side mysql database to save todo data
