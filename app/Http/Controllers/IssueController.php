@@ -36,10 +36,10 @@ class IssueController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($issue_id)
+    public function show($issue_number): \Inertia\Response
     {
-        return Inertia::render('Github/Components/Details', [
-            'id' => $issue_id,
+        return Inertia::render('Github/Components/IssueDetails', [
+            'issue_number' => $issue_number,
         ]);
     }
 

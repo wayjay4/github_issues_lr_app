@@ -18,6 +18,8 @@ Frontend installed packages:
 - **Prop Types v18.2.0 (typechecking):** https://legacy.reactjs.org/docs/typechecking-with-proptypes.html
 - **React Query v3 (asynchronous state management):** https://tanstack.com/query/v3/docs/react/overview
 - **date-fns v3.0.0 (javaScript date utility library):** https://date-fns.org/docs/Getting-Started
+- **React Markdown (a React component to render markdown):** https://github.com/remarkjs/react-markdown?tab=readme-ov-file
+- **React Markdown CSS: manuel install version (the minimal amount of CSS to replicate the GitHub Markdown style):** https://github.com/sindresorhus/github-markdown-css
 
 Note:
 - using server-side mysql database to save todo data

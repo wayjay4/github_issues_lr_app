@@ -1,5 +1,6 @@
 @import './github/reset';
 @import './github/App';
+@import './github/Github_markdown';
 
 @tailwind base;
 @tailwind components;

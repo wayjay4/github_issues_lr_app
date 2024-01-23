@@ -21,6 +21,7 @@
     },
     "dependencies": {
         "date-fns": "^3.3.1",
+        "react-markdown": "^9.0.1",
         "react-query": "^3.39.3"
     }
 }

@@ -46,17 +46,17 @@ function Issues() {
             {isSuccess &&
                 <div className="issues-container">
                     <div className="issues-heading">
-                        <a href="#">facebook / create-react-app</a>
+                        <a href="https://github.com/facebook/create-react-app">facebook / create-react-app</a>
                         <div className="open-closed-buttons">
                             <button onClick={()=>setFilter('open')}>
                                 <OpenIcon />
-                                <span className={filter === 'open' && 'font-bold'}>
+                                <span className={filter === 'open' ? 'font-bold' : ''}>
                                     {isSuccessIssuesOpen && (<span>{issuesOpen.total_count} Open</span>)}
                                 </span>
                             </button>
                             <button onClick={()=>setFilter('closed')}>
                                 <ClosedIcon />
-                                <span className={filter === 'closed' && 'font-bold'}>
+                                <span className={filter === 'closed' ? 'font-bold' : ''}>
                                     {isSuccessIssuesClosed && (<span>{issuesClosed.total_count} Open</span>)}
                                 </span>
                             </button>
@@ -69,7 +69,7 @@ function Issues() {
                                     {issue.state === 'open' && <OpenIcon />}
                                     {issue.state === 'closed' && <ClosedIcon />}
                                     <div className="issues-title">
-                                        <Link href={`/issues/1`}>
+                                        <Link href={`/issues/${issue.number}`}>
                                             {issue.title}
                                         </Link>
                                         <div className="issues-title-details">
@@ -78,7 +78,7 @@ function Issues() {
                                     </div>
                                 </div>
                                 {issue.comments > 0 && (
-                                    <Link href={`/issues/1`} className="comments-count-container">
+                                    <Link href={`/issues/${issue.number}`} className="comments-count-container">
                                         <svg
                                             className="octicon octicon-comment v-align-middle"
                                             viewBox="0 0 16 16"
