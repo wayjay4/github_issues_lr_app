@@ -4,7 +4,6 @@ import ReactMarkdown from "react-markdown";
 
 function Comments({issueNumber}) {
     const {
-        isLoading,
         isSuccess,
         data: comments
     } = useQuery(['comments', issueNumber], fetchComments);

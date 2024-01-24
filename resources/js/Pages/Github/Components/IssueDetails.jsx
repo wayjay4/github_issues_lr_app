@@ -3,35 +3,34 @@ import {ReactQueryDevtools} from "react-query/devtools";
 import {formatDistance} from "date-fns";
 import Comments from "@/Pages/Github/Components/Comments.jsx";
 import ReactMarkdown from 'react-markdown';
+import NavBarHome from "@/Pages/Github/Components/NavBarHome.jsx";
 
 // Create a client
 const queryClient = new QueryClient();
 
-function IssueDetails(props) {
+function IssueDetails({issue_number}) {
     return (
         <QueryClientProvider client={queryClient}>
-            <Details props={props} />
-            {/*<ReactQueryDevtools />*/}
+            <Details issueNumber={issue_number} />
+            <ReactQueryDevtools />
         </QueryClientProvider>
     );
 }
 
-function Details({props}) {
-    const number = props.issue_number;
-
+function Details({issueNumber}) {
     const {
-        isLoading,
         isSuccess,
         data: issue
-    } = useQuery(['issue', number], fetchIssue);
+    } = useQuery(['issue', issueNumber], fetchIssue);
 
     function fetchIssue() {
-        return fetch(`https://api.github.com/repos/facebook/create-react-app/issues/${number}`)
+        return fetch(`https://api.github.com/repos/facebook/create-react-app/issues/${issueNumber}`)
             .then(response => response.json());
     }
 
     return (
         <>
+            <NavBarHome />
             {isSuccess && (
                 <div className="comments-container">
                     <h2>

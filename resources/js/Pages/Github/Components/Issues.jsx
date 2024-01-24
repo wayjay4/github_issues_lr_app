@@ -3,7 +3,7 @@ import {useQuery} from "react-query";
 import OpenIcon from "@/Pages/Github/Components/IconOpen.jsx";
 import ClosedIcon from "@/Pages/Github/Components/ClosedIcon.jsx";
 import {useState} from "react";
-import { formatDistance, subDays } from "date-fns";
+import { formatDistance } from "date-fns";
 
 function Issues() {
     const [filter, setFilter] = useState('open');
